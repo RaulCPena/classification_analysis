@@ -1,5 +1,9 @@
 # Fannie Mae Loan Default Prediction
 
+
+
+
+
 [GithubPages](https://raulcpena.github.io/classification_analysis/)
 
 ## Overview:
@@ -33,4 +37,26 @@ Data from 2017 to 2019 was used for this project.
    * Feature encoding
 
 4. Save our clean file and get ready to start modeling.
+
+# Information about the data
+
+|  #   |               Column               |     Dtype      |
+| :--: | :--------------------------------: | :------------: |
+|  0   |          Loan Identifier           |     int64      |
+|  1   |      Monthly Reporting Period      | datetime64[ns] |
+|  2   |       Current Interest Rate        |    float64     |
+|  3   |            Original UPB            |     int64      |
+|  4   |         Original Loan Term         |     int64      |
+|  5   |          Origination Date          | datetime64[ns] |
+|  6   |              Loan Age              |     int64      |
+|  7   |           Maturity Date            | datetime64[ns] |
+|  8   | Original Loan to Value Ratio (LTV) |     int64      |
+|  9   |        Number of Borrowers         |     int64      |
+|  10  |        Debt-To-Income (DTI)        |     int64      |
+|  11  |  First Time Home Buyer Indicator   |     int64      |
+|  12  |         Modification Flag          |     int64      |
+|  13  |    Home Ready Program Indicator    |     int64      |
+|  14  |    High Balance Loan Indicator     |     int64      |
+|  15  |        Minimum Credit Score        |     int64      |
+|  16  |             Foreclosed             |     int64      |
 

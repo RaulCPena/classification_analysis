@@ -189,3 +189,10 @@ cython_debug/
 {"mode":"full","isActive":false}
 config.py
 Jupyter_Notebooks/Modeling_copy.ipynb
+MLProject_1_template.zip
+MLProject_RegressionClassification.zip
+Text_Files/col_headers.txt
+Text_Files/discard_cols.txt
+TP_Capstone_Deliverable/.DS_Store
+TP_Capstone_Deliverable/.vscode/settings.json
+TP_Capstone_Deliverable/schema

@@ -19,13 +19,13 @@ Data from 2017 to 2019 was used for this project.
 
 1. Data Acquisition: Data downloadeed from Fannie Mae in .csv format.
 2. Explatoratory Data Analysis:
-  1. Getting a better understanding of data
-  2. Identifying various data patterns
-  3. Getting a better understanding of the problem statement
+  - Getting a better understanding of data
+  - Identifying various data patterns
+  - Getting a better understanding of the problem statement
 3. Data PreProcessing: 
-  1. Identify missing values and either eiliminate those rows or fill them in
-  2. Determine if there are inconsisten values
-  3. Identify duplicated values
-  4. Feature aggregation if needed
-  5. Feature encoding
+  - Identify missing values and either eiliminate those rows or fill them in
+  - Determine if there are inconsisten values
+  - Identify duplicated values
+  - Feature aggregation if needed
+  - Feature encoding
 4. Save our clean file and get ready to start modeling.

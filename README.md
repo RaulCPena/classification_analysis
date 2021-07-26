@@ -46,29 +46,29 @@ Originally, the downloaded data had **108** columns however, most of them were i
 
 **Here we have a null breakdown for all the columns:**
 
-Loan Identifier: total of 0 nulls- 0.0%
-Monthly Reporting Period: total of 0 nulls- 0.0%
-Original Interest Rate: total of **41** nulls- 0.0%
-Current Interest Rate: total of 0 nulls- 0.0%
-Original UPB: total of **41** nulls- 0.0%
-Original Loan Term: total of **41** nulls- 0.0%
-Origination Date: total of **41** nulls- 0.0%
-Loan Age: total of 0 nulls- 0.0%
-Maturity Date: total of 0 nulls- 0.0%
-Original Loan to Value Ratio (LTV): total of **41** nulls- 0.0%
-Number of Borrowers: total of **41** nulls- 0.0%
-Debt-To-Income (DTI): total of **668** nulls- 0.01%
-Borrower Credit Score at Origination: total of **6114** nulls- 0.07%
-Co-Borrower Credit Score at Origination: total of **4373161** nulls- 52.79%
-First Time Home Buyer Indicator: total of **41** nulls- 0.0%
-Amortization Type: total of 0 nulls- 0.0%
-Current Loan Delinquency Status: total of 0 nulls- 0.0%
-Modification Flag: total of 0 nulls- 0.0%
-Foreclosure Date: total of **8279621** nulls- 99.95%
-Home Ready Program Indicator: total of 0 nulls- 0.0%
-High Balance Loan Indicator: total of 0 nulls- 0.0%
-Borrower Assistance Plan: total of 0 nulls- 0.0%
-Minimum Credit Score: total of **4185** nulls- 0.05%
+- Loan Identifier: total of 0 nulls- 0.0%
+- Monthly Reporting Period: total of 0 nulls- 0.0%
+- Original Interest Rate: total of **41** nulls- 0.0%
+- Current Interest Rate: total of 0 nulls- 0.0%
+- Original UPB: total of **41** nulls- 0.0%
+- Original Loan Term: total of **41** nulls- 0.0%
+- Origination Date: total of **41** nulls- 0.0%
+- Loan Age: total of 0 nulls- 0.0%
+- Maturity Date: total of 0 nulls- 0.0%
+- Original Loan to Value Ratio (LTV): total of **41** nulls- 0.0%
+- Number of Borrowers: total of **41** nulls- 0.0%
+- Debt-To-Income (DTI): total of **668** nulls- 0.01%
+- Borrower Credit Score at Origination: total of **6114** nulls- 0.07%
+- Co-Borrower Credit Score at Origination: total of **4373161** nulls- 52.79%
+- First Time Home Buyer Indicator: total of **41** nulls- 0.0%
+- Amortization Type: total of 0 nulls- 0.0%
+- Current Loan Delinquency Status: total of 0 nulls- 0.0%
+- Modification Flag: total of 0 nulls- 0.0%
+- Foreclosure Date: total of **8279621** nulls- 99.95%
+- Home Ready Program Indicator: total of 0 nulls- 0.0%
+- High Balance Loan Indicator: total of 0 nulls- 0.0%
+- Borrower Assistance Plan: total of 0 nulls- 0.0%
+- Minimum Credit Score: total of **4185** nulls- 0.05%
 
 **Data Table**
 

@@ -221,5 +221,3 @@ One major concern was the imbalance within our target feature **Foreclosed**
 
 ![distro_of_target](../classification_analysis\Notebook_images\distro_of_target.png)
 
-
-

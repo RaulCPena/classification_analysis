@@ -7,7 +7,7 @@ app = Flask(__name__)
 # temp value - to be filled in
 numColumns = 3
 
-loaded_model = pickle.load(open("../Models/model_xgb_over.sav", "rb"))
+loaded_model = pickle.load(open("./Models/model_xgb_over.sav", "rb"))
 
 # data_columns = ['Pclass', 'Age', 'Sibsp', 'Parch', 'Fare', 'Gender','Area of Town']
 @app.route('/',methods=["GET","POST"])

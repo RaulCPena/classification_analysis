@@ -226,9 +226,10 @@ One major concern was the imbalance within our target feature **Foreclosed**
 
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/distro_of_target.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Screenshot 2021-07-26 220142.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/download.png" style="height: 400px; width: 70%">
 </div>
+
 ## Imbalanced Data Modeling
 
 #### The problem with Imbalanced Classes:
@@ -282,3 +283,86 @@ Ways to combat imbalanced training data are:
 </div>
 [source](https://oralytics.files.wordpress.com/2019/05/screenshot-2019-05-20-15.34.14.png?w=705)
 
+# Modeling
+
+Imports
+
+```python
+import pandas as pd
+import numpy as np
+from numpy import where
+import scipy as sci
+import seaborn as sns
+
+from matplotlib import pyplot as plt
+%matplotlib inline
+import warnings
+warnings.filterwarnings('ignore')
+
+from collections import Counter
+
+# imblearn
+from imblearn.over_sampling import RandomOverSampler as ros
+from imblearn.under_sampling import RandomUnderSampler as rus
+from imblearn.over_sampling import SMOTE
+from imblearn import under_sampling, over_sampling, combine
+
+# sklearn
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import f1_score, roc_auc_score, roc_curve
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import precision_score, roc_auc_score, accuracy_score, confusion_matrix, recall_score, plot_confusion_matrix
+from sklearn.model_selection import train_test_split, GridSearchCV, cross_validate, cross_val_score, StratifiedKFold, RepeatedStratifiedKFold
+
+# XGBoost
+import xgboost as xgb
+from xgboost import XGBClassifier
+from catboost import CatBoostClassifier
+
+# save model
+import pickle
+```
+
+
+
+### First thing I did was combine an over and under sampling technique by importing the library imblearn
+
+```python
+# example of random oversampling to balance the class distribution
+# Combining Random Oversampling and Undersampling
+counter = Counter(y)
+# summarize class distribution
+print(f'  Initial Data: {counter}')
+
+# define undersampling strategy
+under = rus(sampling_strategy=0.5)
+count_y = Counter(y_under)
+# fit and apply the transform
+X_under, y_under = under.fit_resample(X, y)
+# summarize class distribution
+print(f'Under sampling: {count_y}')
+
+# define oversampling strategy
+over = SMOTE(sampling_strategy=0.7)
+# fit and apply the transform
+X_over, y_over = over.fit_resample(X_under, y_under)
+# summarize class distribution
+counter_o = Counter(y_over)
+print(f' Over sampling: {counter_o}')
+```
+
+Output: 
+
+```python
+  Initial Data: Counter({0: 8255841, 1: 22816})
+Under sampling: Counter({0: 45632, 1: 22816})
+ Over sampling: Counter({0: 45632, 1: 31942})
+```
+
+I chose to do the following models:
+
+- Logistic Regression with Under Sampling data
+- SMOTE Logistic Regression with Over Sampling data

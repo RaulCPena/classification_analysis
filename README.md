@@ -279,7 +279,7 @@ Ways to combat imbalanced training data are:
 ### Here is an example of what SMOTE is doing:
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images\smote_example.png" style="height: 200px;  width: 100%">
+   <img src="./Notebook_images\smote.png" style="height: 200px;  width: 100%">
 </div>
 [source](https://oralytics.files.wordpress.com/2019/05/screenshot-2019-05-20-15.34.14.png?w=705)
 

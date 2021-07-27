@@ -1,6 +1,6 @@
-# Fannie Mae Loan Default Prediction
+# Loan Default Prediction
 
-[GithubPages](https://raulcpena.github.io/classification_analysis/)
+------
 
 ## Overview:
 The goal of this project is to analyze the Fannie Mae Single-Family Loan Data.
@@ -30,13 +30,17 @@ Data from 2017 to 2019 was used for this project.
    * Perform the initial investigations so to discover patterns, spot anomalies, test hypothesis and check assumptions, using visualizations
 4. Save our clean file and get ready to start modeling.
 
-# Information about the original data
+# The Original Data
+
+------
 
 Originally, Fannie Mae has all of their data in csv format and the total size is roughly **370gb**. Each quarter starting from 2000 has about **104million rows** of data, so all together that would have required a massive amount of computing power. I decided on using data from 2016 through 2019 for my project. 
 
 The compiled data had **108** columns however, most of them were added in 2017 and would not start reporting reporting data until June 2020, so I decided not use keep those rows for this project.
 
 # Pre-Processing the data
+
+------
 
 | Null breakdown for all the columns:                          |
 | :----------------------------------------------------------- |
@@ -64,7 +68,7 @@ The compiled data had **108** columns however, most of them were added in 2017 a
 | Borrower Assistance Plan: total of 0 nulls- 0.0%             |
 | Minimum Credit Score: total of **4185** nulls- 0.05%         |
 
-You can see that **`Foreclosure`**  has **99.95%** missing data and **`Co-Borrower Credit Score at Origination`** has **52.79%** missing. 
+> You can see that **`Foreclosure`**  has **99.95%** missing data and **`Co-Borrower Credit Score at Origination`** has **52.79%** missing. 
 
 **Data Table**
 
@@ -104,7 +108,7 @@ The following was completed:
 
    Fannie Mae provided guidelines on creating new features and with this specific one I had to look at both columns and if anyone was missing I would take the `mean` of that column and enter it for the value, however should both columns have a value only the lowest of the two was kept. 
 
-2. Feature **`On Assistance PLan`** was mapped using the following code snippet:
+2. Feature **`On Assistance Plan`** was mapped using the following code snippet:
 
    ```python
    # F T R to be on plan
@@ -114,7 +118,7 @@ The following was completed:
        return 0
    ```
 
-3. Dropped the following columns after creating new ones `'Borrower Credit Score at Origination', 'Co-Borrower Credit Score at Origination',  'Borrower Assistance Plan'`
+3. Dropped the following columns after creating new ones **`'Borrower Credit Score at Origination', 'Co-Borrower Credit Score at Origination',  'Borrower Assistance Plan'`**
 
 4. Set new conditions to fill in the null values of **`Foreclosed`** using the following methods:
 
@@ -195,6 +199,8 @@ The following was completed:
 
 # Exploratory Data Analysis
 
+------
+
 Here is a look at our final data information table:
 
 |  #   |               Column               |     Dtype      |
@@ -225,3 +231,56 @@ One major concern was the imbalance within our target feature **Foreclosed**
    <img src="./Notebook_images/distro_of_target.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/download.png" style="height: 400px; width: 70%">
 </div>
+## Imbalanced Data Modeling
+
+#### The problem with Imbalanced Classes:
+
+Machine learning algorithms work better when the number of samples in each class are about equal.  Most algorithms are designed to maximize accuracy and reduce error.
+
+The class or classes with abundant examples are called the major or majority classes, whereas the class with few examples (and there is typically just one) is called the minor or minority class.
+
+- **Majority Class**: The class (or classes) in an imbalanced classification predictive modeling problem that has many examples.
+- **Minority Class**: The class in an imbalanced classification predictive modeling problem that has few examples.
+
+The minority class is of most importance typically. This class is harder to predict because there are so few examples. 
+
+Here is a list of examples of imbalanced data:
+
+- Fraud Detection.
+- Claim Prediction
+- Default Prediction.
+- Churn Prediction.
+- Spam Detection.
+- Anomaly Detection.
+- Outlier Detection.
+- Intrusion Detection
+- Conversion Prediction.
+
+Ways to combat imbalanced training data are:
+
+1. **Can we collect more data?**
+
+2. **Try changing your performance metric.**
+
+   - **Confusion Matrix**: A breakdown of predictions into a table showing correct predictions (the diagonal) and the types of incorrect predictions made (what classes incorrect predictions were assigned).
+   - **Precision**: A measure of a classifiers exactness.
+   - **Recall**: A measure of a classifiers completeness
+   - **F1 Score (or F-score)**: A weighted average of precision and recall.
+
+3. **We can try resampling the dataset**
+
+   1.  Add copies from the under-represented class call over-sampling, or
+   2. Delete instances from the over-represented class, called under-sampling
+   3. Or we could do both
+
+4. **Generate Synthetic Samples**
+
+   Here is a link to the most popular algorithm called **[SMOTE](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)** or the Synthetic Minority Over-sampling Technique. SMOTE is an oversampling method, in which the algorithm selects two or more similar instances and using a distance measure and pertubing an instance one attribute at a time by a random amount within the difference to the neighboring instances.
+
+### Here is an example of what SMOTE is doing:
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images\smote_example.png" style="height: 200px;  width: 100%">
+</div>
+[source](https://oralytics.files.wordpress.com/2019/05/screenshot-2019-05-20-15.34.14.png?w=705)
+

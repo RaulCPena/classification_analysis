@@ -226,7 +226,7 @@ One major concern was the imbalance within our target feature **Foreclosed**
 
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/Screenshot 2021-07-26 220142.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/target_feature_distribution.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/download.png" style="height: 400px; width: 70%">
 </div>
 

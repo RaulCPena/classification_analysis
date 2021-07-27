@@ -219,7 +219,9 @@ Here is a look at our final data information table:
 
 One major concern was the imbalance within our target feature **Foreclosed** 
 
-![distro_of_target](../classification_analysis\Notebook_images\distro_of_target.png)
 
 
-
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/distro_of_target.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/download.png" style="height: 400px; width: 70%">
+</div>

@@ -1,5 +1,3 @@
-# Loan Default Prediction
-
 ------
 
 ## Overview:

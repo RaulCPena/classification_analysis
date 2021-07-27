@@ -1,6 +1,23 @@
 # Fannie Mae Loan Default Prediction
 
+# Table of contents
 
+<!-- After you have introduced your project, it is a good idea to add a **Table of contents** or **TOC** as **cool** people say it. This would make it easier for people to navigate through your README and find exactly what they are looking for.
+
+Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README. -->
+
+- [Table of contents](#table-of-contents)
+- [Project Title](#project-title)
+- [Original Data](#Original-Data)
+- [Installation](#installation)
+- [Information about the original data](#original-data)
+- [Usage](#usage)
+- [Development](#development)
+- [Contribute](#contribute)
+    - [Sponsor](#sponsor)
+    - [Adding new features or fixing bugs](#adding-new-features-or-fixing-bugs)
+- [License](#license)
+- [Footer](#footer)
 
 
 
@@ -38,7 +55,7 @@ Data from 2017 to 2019 was used for this project.
 
 4. Save our clean file and get ready to start modeling.
 
-# Information about the original data
+# Original Data
 
 Originally, the downloaded data had **108** columns however, most of them were implemented in 2017 and only recently started reporting data as of June 2020 so at the time of this capstone they were not used.
 

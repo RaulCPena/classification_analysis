@@ -12,8 +12,7 @@ The main question -
 1. The purpose is to build a model that can predict if an acquired loan will default or not.
 
 ## Where is the data located?
-All of the data came from Fannie Mae's data housing [website]( https://capitalmarkets.fanniemae.com/tools-applications/data-dynamics)
-The data is broken up by quarters from 2000 through 2020. 
+All of the data came from Fannie Mae's data housing [website]( https://capitalmarkets.fanniemae.com/tools-applications/data-dynamics), and the data is broken up by quarters from 2000 through 2020. 
 
 ## How was the data sampled?
 The data used come 2016, 2017, 2018, and 2019.

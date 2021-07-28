@@ -1,4 +1,4 @@
 flask
 gunicorn
 flask-heroku
-sklearn
+sklearn== 0.24.1

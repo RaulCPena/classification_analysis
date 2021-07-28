@@ -231,9 +231,11 @@ Here are some ways to overcome the challenge of imbalanced:
 
 ![](./Notebook_images/SMOTE_examples.jpg)
 
-## Logistic Regression
+# Logistic Regression
 
 To create a baseline for all of our modeling I ran a logistic regression algorithm. It is the most simplest of all machine learning algorithms. 
+
+#### #Logistic Regression Under Sampled
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/UndersamplingLogR.png" style="height: 400px;  width: 50%">
@@ -241,7 +243,7 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 </div>
 
 
-> Here are the results using Logistic Regression with the Oversampled data
+##### SMOTE Logistic Regression Over Sampled
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/SMOTE_Oversample_LogR.png" style="height: 400px;  width: 50%">
@@ -249,38 +251,53 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 </div>
 
 
-## Decision Tree
+# Decision Tree
 
-> Decision Tree using Under Sampling Data
-
-<div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
-   <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
-</div>
-
-> Decision Tree using Over Sampling Data
-
-<div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/Dtree_Oversample.png" style="height: 400px;  width: 50%">
-   <img src="./Notebook_images/Dtree_Oversample_Classification.png" style="height: 400px; width: 70%">
-</div>
-
-## Random Forest
-
-> Random Forest using Under Sampling Data
+##### Decision Tree using Under Sampling Data
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
 </div>
 
-> Random Forest using Over Sampling Data
+##### Decision Tree using Over Sampling Data
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/Dtree_Oversample.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/Dtree_Oversample_Classification.png" style="height: 400px; width: 70%">
 </div>
 
+# Random Forest
+
+##### Random Forest using Under Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
+</div>
+
+##### Random Forest using Over Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/Dtree_Oversample.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Dtree_Oversample_Classification.png" style="height: 400px; width: 70%">
+</div>
+
+# XGBoost
+
+##### XGBoost Under Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/XGBoost_feature_importance_Undersampling.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Clasification_Report_XGBoosst_Undersampling.png" style="height: 400px; width: 70%">
+</div>
+
+##### XGBoost Over Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/classification_report_XGBoost_over.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Clasification_Report_XGBoosst_Undersampling.png" style="height: 400px; width: 70%">
+</div>
 
 
 

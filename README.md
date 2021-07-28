@@ -179,7 +179,7 @@ The following was completed:
 
 > **This image contains boxplots and distplots of a few features.** We can see that there are some features which contain outliers and  we have right and left skewed distribution.
 
-![](C:\Users\RaulPena\Documents\classification_analysis\Notebook_images\subplots_boxplot_and_displot.png)
+![](./Notebook_images/subplots_boxplot_and_displot.png)
 
 
 

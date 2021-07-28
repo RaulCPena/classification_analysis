@@ -9,14 +9,14 @@ The goal of this project is to analyze the Fannie Mae Single-Family Loan Data.
 What question am I trying to answer?
 The main question -
 
-1. Predict if a loan will be foreclosed on in the future.
+1. The purpose is to build a model that can predict if an acquired loan will default or not.
 
-## Where did the data come from?
+## Where is the data located?
 All of the data came from Fannie Mae's data housing [website]( https://capitalmarkets.fanniemae.com/tools-applications/data-dynamics)
 The data is broken up by quarters from 2000 through 2020. 
 
 ## How was the data sampled?
-Data from 2017 to 2019 was used for this project.
+The data used come 2016, 2017, 2018, and 2019.
 
 ## The data pipeline
 
@@ -28,16 +28,16 @@ Data from 2017 to 2019 was used for this project.
    * Feature aggregation if needed
    * Feature encoding
 3. Exploratory Data Analysis:
-   * Perform the initial investigations so to discover patterns, spot anomalies, test hypothesis and check assumptions, using visualizations
+   * Perform the initial investigations to discover patterns, spot anomalies, test hypotheses, and check assumptions, using visualizations
 4. Save our clean file and get ready to start modeling.
 
 # The Original Data
 
 ------
 
-Originally, Fannie Mae has all of their data in csv format and the total size is roughly **370gb**. Each quarter starting from 2000 has about **104million rows** of data, so all together that would have required a massive amount of computing power. I decided on using data from 2016 through 2019 for my project. 
+Initially, Fannie Mae has all of its data in CSV format, and the total size is roughly **370Gb**. Each quarter starting from 2000 has about **104 million rows** of data, so altogether that would have required a massive amount of computing power. 
 
-The compiled data had **108** columns however, most of them were added in 2017 and would not start reporting reporting data until June 2020, so I decided not use keep those rows for this project.
+The compiled data had **108** columns; however, most of them were added in 2017 and would not start reporting data until June 2020, so I decided not to use those rows for this project.
 
 ------
 
@@ -76,14 +76,12 @@ The compiled data had **108** columns however, most of them were added in 2017 a
 
 ## Data Manipulation
 
-The following was completed:
-
 1. Created a new column called **`Minimum Credit Score`** by taking comparing the following two columns:
 
    - Borrow Credit Score at Origination
    - Co-Borrower Credit Score at Origination
 
-   Fannie Mae provided guidelines on creating new features and with this specific one I had to look at both columns and if anyone was missing I would take the `mean` of that column and enter it for the value, however should both columns have a value only the lowest of the two was kept. 
+   Fannie Mae provided guidelines on creating new features, and with this specific one, I had to look at both columns. If missing values, take the `mean` of that column and enter it for the value; however, if both columns have values, take the lowest of them. 
 
 2. Feature **`On Assistance Plan`** was mapped using the following code snippet:
 
@@ -95,7 +93,7 @@ The following was completed:
        return 0
    ```
 
-3. Dropped the following columns after creating new ones **`'Borrower Credit Score at Origination', 'Co-Borrower Credit Score at Origination',  'Borrower Assistance Plan'`**
+3. Dropped the following columns after creating new ones **`Borrower Credit Score at Origination`, `Co-Borrower Credit Score at Origination`,  `Borrower Assistance Plan`**
 
 4. Set new conditions to fill in the null values of **`Foreclosed`** using the following methods:
 
@@ -131,7 +129,7 @@ The following was completed:
                                        'Maturity Date']].astype('str')
    ```
 
-   After imputation from float to string the string retained its '.' ,  so to resolve this a few cells were created:
+   After imputation from float to string, the string retained its '.',  so to resolve this, a new column was created:
 
    ​		**Origination Date**
 
@@ -180,13 +178,13 @@ The following was completed:
 
 ------
 
-> **Reviewing the  heatmap we can see the relationship between all of the features and determine if there will be any collinearity, however since we are conducting a prediction classification multi-collinearity will not affect our outcome**
+> **Reviewing the  heatmap, we can see the relationship between all of the features and determine if there will be any collinearity; however, since we are conducting a prediction classification, multi-collinearity will not affect our outcome**
 
 ![heatmap](./Notebook_images/heatmap.png)
 
 
 
-> **This image contains boxplots and distplots of a few features.** We can see that there are some features which contain outliers and  we have right and left skewed distribution.
+> **This image contains boxplots and distplots of a few features.** We can see that some features include outliers, and we have right-skewed and left-skewed distribution.
 
 ![](./Notebook_images/subplots_boxplot_and_displot.png)
 
@@ -205,7 +203,7 @@ The following was completed:
 
 ## Imbalanced Data Modeling
 
-Machine learning algorithms work better when the number of samples in each class are about equal.  
+Machine learning algorithms work better when the number of samples in each class is about equal.  
 
 - **Majority Class**: The target feature values are **[0]** not foreclosed.
 - **Minority Class**: The target features values are **[1]** foreclosed.
@@ -217,9 +215,9 @@ Here are some ways to overcome the challenge of imbalanced:
 2. **Change the performance metric.**
 
    - **Confusion Matrix**: A breakdown of predictions into a table showing correct predictions and the types of incorrect predictions made.
-   - **Precision**: A measure of a classifiers exactness.
-   - **Recall**: A measure of a classifiers completeness
-   - **F1 Score (or F-score)**: A weighted average of precision and recall.
+   - ** Precision**: A measure of a classifier's exactness.
+   - ** Recall**: A measure of a classifiers completeness
+   - **F1 Score (or F-score)**: A weighted average of Precision and Recall.
 
 3. **We can try resampling the dataset**
 
@@ -229,7 +227,7 @@ Here are some ways to overcome the challenge of imbalanced:
 
 4. **Generate Synthetic Samples**
 
-   Here is a link to the most popular algorithm called **[SMOTE](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)** or the Synthetic Minority Over-sampling Technique. 
+   Here is a link to the most popular algorithm called **[SMOTE](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)** or the Synthetic Minority Oversampling Technique. 
    
    The module works by generating new instances from existing minority cases that you supply as input. This implementation of SMOTE does **not** change the number of majority cases.
 
@@ -248,7 +246,7 @@ Here are some ways to overcome the challenge of imbalanced:
 
 # Logistic Regression
 
-To create a baseline for all of our modeling I ran a logistic regression algorithm. It is the most simplest of all machine learning algorithms. 
+To create a baseline for all of our modelings, I ran a logistic regression algorithm. It is the simplest of all machine learning algorithms. 
 
 ------
 

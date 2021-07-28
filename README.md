@@ -235,7 +235,7 @@ Here are some ways to overcome the challenge of imbalanced:
 
 To create a baseline for all of our modeling I ran a logistic regression algorithm. It is the most simplest of all machine learning algorithms. 
 
-#### #Logistic Regression Under Sampled
+##### Logistic Regression Under Sampled
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/UndersamplingLogR.png" style="height: 400px;  width: 50%">

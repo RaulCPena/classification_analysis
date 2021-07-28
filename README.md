@@ -2,7 +2,7 @@
 
 [Heroku Deployed Model](https://capstone-classification-app.herokuapp.com/)
 
-## Overview:
+# Project Overview
 
 The goal of this project is to analyze the Fannie Mae Single-Family Loan Data.
 
@@ -11,26 +11,13 @@ The main question -
 
 1. The purpose is to build a model that can predict if an acquired loan will default or not.
 
-## Where is the data located?
+## Where to obtain the data?
 All of the data came from Fannie Mae's data housing [website]( https://capitalmarkets.fanniemae.com/tools-applications/data-dynamics), and the data is broken up by quarters from 2000 through 2020. 
 
 ## How was the data sampled?
 The data used come 2016, 2017, 2018, and 2019.
 
-## The data pipeline
-
-1. Data Acquisition: Data downloaded from Fannie Mae in .csv format.
-2. Data Preprocessing: 
-   * Identify missing values and either eliminate those rows or imputation
-   * Determine if there are inconsistent values
-   * Identify duplicated values
-   * Feature aggregation if needed
-   * Feature encoding
-3. Exploratory Data Analysis:
-   * Perform the initial investigations to discover patterns, spot anomalies, test hypotheses, and check assumptions, using visualizations
-4. Save our clean file and get ready to start modeling.
-
-# The Original Data
+# Original Data
 
 ------
 
@@ -42,34 +29,9 @@ The compiled data had **108** columns; however, most of them were added in 2017 
 
 # Pre-Processing the data
 
-|  #   | Column                                  |  Dtype  |           Null Percentage |
-| :--: | :-------------------------------------- | :-----: | ------------------------: |
-|  0   | Loan Identifier                         |  int64  |             0 nulls- 0.0% |
-|  1   | Monthly Reporting Period                |  int64  |             0 nulls- 0.0% |
-|  2   | Original Interest Rate                  | float64 |        **41** nulls- 0.0% |
-|  3   | Current Interest Rate                   | float64 |             0 nulls- 0.0% |
-|  4   | Original UPB                            | float64 |        **41** nulls- 0.0% |
-|  5   | Original Loan Term                      | float64 |             0 nulls- 0.0% |
-|  6   | Origination Date                        | float64 |        **41** nulls- 0.0% |
-|  7   | Loan Age                                | float64 |             0 nulls- 0.0% |
-|  8   | Maturity Date                           | float64 |             0 nulls- 0.0% |
-|  9   | Original Loan to Value Ratio (LTV)      | float64 |        **41** nulls- 0.0% |
-|  10  | Number of Borrowers                     | float64 |        **41** nulls- 0.0% |
-|  11  | Debt-To-Income (DTI)                    | float64 |      **668** nulls- 0.01% |
-|  12  | Borrower Credit Score at Origination    | float64 |     **6114** nulls- 0.07% |
-|  13  | Co-Borrower Credit Score at Origination | float64 | **4373161** nulls- 52.79% |
-|  14  | First Time Home Buyer Indicator         | object  |        **41** nulls- 0.0% |
-|  15  | Amortization Type                       | object  |             0 nulls- 0.0% |
-|  16  | Current Loan Delinquency Status         |  int64  |             0 nulls- 0.0% |
-|  17  | Modification Flag                       | object  |             0 nulls- 0.0% |
-|  18  | Foreclosure Date                        | float64 | **8279621** nulls- 99.95% |
-|  19  | Home Ready Program Indicator            | object  |             0 nulls- 0.0% |
-|  20  | High Balance Loan Indicator             | object  |             0 nulls- 0.0% |
-|  21  | Borrower Assistance Plan                | object  |     **4185** nulls- 0.05% |
-
 ------
 
-> You can see that **`Foreclosure`**  has **99.95%** missing data and **`Co-Borrower Credit Score at Origination`** has **52.79%** missing. 
+> **`Foreclosure`**  has **99.95%** missing data and **`Co-Borrower Credit Score at Origination`** has **52.79%** missing. 
 
 ------
 
@@ -154,22 +116,8 @@ The compiled data had **108** columns; however, most of them were added in 2017 
    df['Monthly Reporting Period'] = pd.to_datetime(df['Monthly Reporting Period'],format='%m%Y')
    ```
 
-6. Finally, dropped the following null values within these columns:
-
-   ```Python
-   Original Interest Rate: total of 41 nulls- 0.0%
-   Original UPB: total of 41 nulls- 0.0%
-   Original Loan Term: total of 41 nulls- 0.0%
-   Origination Date: total of 41 nulls- 0.0%
-   Original Loan to Value Ratio (LTV): total of 41 nulls- 0.0%
-   Number of Borrowers: total of 41 nulls- 0.0%
-   Debt-To-Income (DTI): total of 668 nulls- 0.01%
-   First Time Home Buyer Indicator: total of 41 nulls- 0.0%
-   Minimum Credit Score: total of 4185 nulls- 0.05%
-   Foreclosed: total of 0 nulls- 0.0%
-   ```
-
    Our final shape of the data **(8,278,657, 19)**
+
 
 ------
 
@@ -177,7 +125,7 @@ The compiled data had **108** columns; however, most of them were added in 2017 
 
 ------
 
-> **Reviewing the  heatmap, we can see the relationship between all of the features and determine if there will be any collinearity; however, since we are conducting a prediction classification, multi-collinearity will not affect our outcome**
+> *Reviewing the  heatmap, we can see the relationship between all of the features and determine if there will be any collinearity; however, since we are conducting a prediction classification, multi-collinearity will not affect our outcome*
 
 ![heatmap](./Notebook_images/heatmap.png)
 
@@ -194,9 +142,9 @@ The compiled data had **108** columns; however, most of them were added in 2017 
 ## Our target feature **Foreclosed** was heavily imbalanced:
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/target_feature_distribution.png" style="height: 400px;  width: 50%">
-   <img src="./Notebook_images/download.png" style="height: 400px; width: 70%">
+   <img src="./Notebook_images/target_feature_distribution.png" style="height: 400px;  width: 60%">
 </div>
+
 ------
 
 
@@ -238,10 +186,6 @@ Here are some ways to overcome the challenge of imbalanced:
    <img src="./Notebook_images\smote.png" style="height: 200px;  width: 100%">
 </div>
 [source](https://oralytics.files.wordpress.com/2019/05/screenshot-2019-05-20-15.34.14.png?w=705)
-
-> **Another example of how SMOTE works behind the scenes**
-
-![](./Notebook_images/SMOTE_examples.jpg)
 
 # Logistic Regression
 

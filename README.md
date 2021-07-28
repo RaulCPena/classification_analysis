@@ -288,70 +288,29 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 ##### XGBoost Under Sampling Data
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/XGBoost_feature_importance_Undersampling.png" style="height: 400px;  width: 50%">
-   <img src="./Notebook_images/Clasification_Report_XGBoosst_Undersampling.png" style="height: 400px; width: 70%">
+   <img src="./Notebook_images/XGBoost Over Sampling.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/classification_report_XGBoost_over.png" style="height: 400px; width: 70%">
 </div>
+
+
+
+###### Feature Importance
+
+<img src="./Notebook_images\XGBoost_feature_importance_Oversampling.png" style="zoom:100%;" />
+
+<img src="./Notebook_images/roc_xgboost_undersampling.png" style="zoom: 100%;" />
+
+
 
 ##### XGBoost Over Sampling Data
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/classification_report_XGBoost_over.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/XGBoost Over Sampling.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/Clasification_Report_XGBoosst_Undersampling.png" style="height: 400px; width: 70%">
 </div>
 
+###### Feature Importance
 
+<img src="./Notebook_images\XGBoost_feature_importance_Undersampling.png" style="zoom:100%;" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### First thing I did was combine an over and under sampling technique by importing the library imblearn
-
-```python
-# example of random oversampling to balance the class distribution
-# Combining Random Oversampling and Undersampling
-counter = Counter(y)
-# summarize class distribution
-print(f'  Initial Data: {counter}')
-
-# define undersampling strategy
-under = rus(sampling_strategy=0.5)
-count_y = Counter(y_under)
-# fit and apply the transform
-X_under, y_under = under.fit_resample(X, y)
-# summarize class distribution
-print(f'Under sampling: {count_y}')
-
-# define oversampling strategy
-over = SMOTE(sampling_strategy=0.7)
-# fit and apply the transform
-X_over, y_over = over.fit_resample(X_under, y_under)
-# summarize class distribution
-counter_o = Counter(y_over)
-print(f' Over sampling: {counter_o}')
-```
-
-Output: 
-
-```python
-  Initial Data: Counter({0: 8255841, 1: 22816})
-Under sampling: Counter({0: 45632, 1: 22816})
- Over sampling: Counter({0: 45632, 1: 31942})
-```
-
-I chose to do the following models:
-
-- Logistic Regression with Under Sampling data
-- SMOTE Logistic Regression with Over Sampling data
+![roc_xgboost_oversampling](./Notebook_images/roc_xgboost_oversampling.png)

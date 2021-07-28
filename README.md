@@ -36,6 +36,8 @@ Originally, Fannie Mae has all of their data in csv format and the total size is
 
 The compiled data had **108** columns however, most of them were added in 2017 and would not start reporting reporting data until June 2020, so I decided not use keep those rows for this project.
 
+------
+
 # Pre-Processing the data
 
 |  #   | Column                                  |  Dtype  |           Null Percentage |
@@ -66,6 +68,8 @@ The compiled data had **108** columns however, most of them were added in 2017 a
 ------
 
 > You can see that **`Foreclosure`**  has **99.95%** missing data and **`Co-Borrower Credit Score at Origination`** has **52.79%** missing. 
+
+------
 
 ## Data Manipulation
 
@@ -167,11 +171,13 @@ The following was completed:
 
    Our final shape of the data **(8,278,657, 19)**
 
+------
+
 # Exploratory Data Analysis
 
+------
+
 > **Reviewing the  heatmap we can see the relationship between all of the features and determine if there will be any collinearity, however since we are conducting a prediction classification multi-collinearity will not affect our outcome**
-
-
 
 ![heatmap](./Notebook_images/heatmap.png)
 
@@ -183,12 +189,16 @@ The following was completed:
 
 
 
+------
+
 ## Our target feature **Foreclosed** was heavily imbalanced:
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/target_feature_distribution.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/download.png" style="height: 400px; width: 70%">
 </div>
+------
+
 
 ## Imbalanced Data Modeling
 
@@ -220,6 +230,8 @@ Here are some ways to overcome the challenge of imbalanced:
    
    The module works by generating new instances from existing minority cases that you supply as input. This implementation of SMOTE does **not** change the number of majority cases.
 
+------
+
 ### Here is an example of what SMOTE is doing:
 
 <div style="display: flex; justify-content: center">
@@ -235,6 +247,8 @@ Here are some ways to overcome the challenge of imbalanced:
 
 To create a baseline for all of our modeling I ran a logistic regression algorithm. It is the most simplest of all machine learning algorithms. 
 
+------
+
 ##### Logistic Regression Under Sampled
 
 <div style="display: flex; justify-content: center">
@@ -242,6 +256,8 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
    <img src="./Notebook_images/UnderSampling_Logistic_Regression.png" style="height: 400px; width: 70%">
 </div>
 
+
+------
 
 ##### SMOTE Logistic Regression Over Sampled
 
@@ -253,12 +269,16 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 
 # Decision Tree
 
+------
+
 ##### Decision Tree using Under Sampling Data
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
 </div>
+------
+
 
 ##### Decision Tree using Over Sampling Data
 
@@ -269,12 +289,16 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 
 # Random Forest
 
+------
+
 ##### Random Forest using Under Sampling Data
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
 </div>
+------
+
 
 ##### Random Forest using Over Sampling Data
 
@@ -285,12 +309,35 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 
 # XGBoost
 
+------
+
 ##### XGBoost Under Sampling Data
 
 <div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/XGBoost Over Sampling.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/XGBoostUnderSampling.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Clasification_Report_XGBoosst_Undersampling.png" style="height: 400px; width: 70%">
+</div>
+
+
+------
+
+###### Feature Importance
+
+<img src="./Notebook_images\XGBoost_feature_importance_Undersampling.png" style="zoom:100%;" />
+
+![roc_xgboost_oversampling](./Notebook_images/roc_xgboost_undersampling.png)
+
+------
+
+
+
+##### XGBoost Under Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/XGBoostOverSampling.png" style="height: 400px;  width: 50%">
    <img src="./Notebook_images/classification_report_XGBoost_over.png" style="height: 400px; width: 70%">
 </div>
+
 
 
 
@@ -298,19 +345,7 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 
 <img src="./Notebook_images\XGBoost_feature_importance_Oversampling.png" style="zoom:100%;" />
 
-<img src="./Notebook_images/roc_xgboost_undersampling.png" style="zoom: 100%;" />
+<img src="./Notebook_images/roc_xgboost_oversampling.png" style="zoom: 100%;" />
 
 
 
-##### XGBoost Over Sampling Data
-
-<div style="display: flex; justify-content: center">
-   <img src="./Notebook_images/XGBoost Over Sampling.png" style="height: 400px;  width: 50%">
-   <img src="./Notebook_images/Clasification_Report_XGBoosst_Undersampling.png" style="height: 400px; width: 70%">
-</div>
-
-###### Feature Importance
-
-<img src="./Notebook_images\XGBoost_feature_importance_Undersampling.png" style="zoom:100%;" />
-
-![roc_xgboost_oversampling](./Notebook_images/roc_xgboost_oversampling.png)

@@ -1,4 +1,5 @@
 flask
+pandas
 gunicorn
 flask-heroku
 sklearn== 0.24.1

@@ -1,6 +1,5 @@
 flask
-python-3.9.6
-pandas
+pandas 
 gunicorn
 flask-heroku
-sklearn== 0.24.1
+scikit-learn== 0.24.1

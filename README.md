@@ -38,62 +38,34 @@ The compiled data had **108** columns however, most of them were added in 2017 a
 
 # Pre-Processing the data
 
+|  #   | Column                                  |  Dtype  |           Null Percentage |
+| :--: | :-------------------------------------- | :-----: | ------------------------: |
+|  0   | Loan Identifier                         |  int64  |             0 nulls- 0.0% |
+|  1   | Monthly Reporting Period                |  int64  |             0 nulls- 0.0% |
+|  2   | Original Interest Rate                  | float64 |        **41** nulls- 0.0% |
+|  3   | Current Interest Rate                   | float64 |             0 nulls- 0.0% |
+|  4   | Original UPB                            | float64 |        **41** nulls- 0.0% |
+|  5   | Original Loan Term                      | float64 |             0 nulls- 0.0% |
+|  6   | Origination Date                        | float64 |        **41** nulls- 0.0% |
+|  7   | Loan Age                                | float64 |             0 nulls- 0.0% |
+|  8   | Maturity Date                           | float64 |             0 nulls- 0.0% |
+|  9   | Original Loan to Value Ratio (LTV)      | float64 |        **41** nulls- 0.0% |
+|  10  | Number of Borrowers                     | float64 |        **41** nulls- 0.0% |
+|  11  | Debt-To-Income (DTI)                    | float64 |      **668** nulls- 0.01% |
+|  12  | Borrower Credit Score at Origination    | float64 |     **6114** nulls- 0.07% |
+|  13  | Co-Borrower Credit Score at Origination | float64 | **4373161** nulls- 52.79% |
+|  14  | First Time Home Buyer Indicator         | object  |        **41** nulls- 0.0% |
+|  15  | Amortization Type                       | object  |             0 nulls- 0.0% |
+|  16  | Current Loan Delinquency Status         |  int64  |             0 nulls- 0.0% |
+|  17  | Modification Flag                       | object  |             0 nulls- 0.0% |
+|  18  | Foreclosure Date                        | float64 | **8279621** nulls- 99.95% |
+|  19  | Home Ready Program Indicator            | object  |             0 nulls- 0.0% |
+|  20  | High Balance Loan Indicator             | object  |             0 nulls- 0.0% |
+|  21  | Borrower Assistance Plan                | object  |     **4185** nulls- 0.05% |
+
 ------
 
-| Null breakdown for all the columns:                          |
-| :----------------------------------------------------------- |
-| Loan Identifier: total of 0 nulls- 0.0%                      |
-| Monthly Reporting Period: total of 0 nulls- 0.0%             |
-| Original Interest Rate: total of **41** nulls- 0.0%          |
-| Current Interest Rate: total of 0 nulls- 0.0%                |
-| Original UPB: total of **41** nulls- 0.0%                    |
-| Original Loan Term: total of **41** nulls- 0.0%              |
-| Origination Date: total of **41** nulls- 0.0%                |
-| Loan Age: total of 0 nulls- 0.0%                             |
-| Maturity Date: total of 0 nulls- 0.0%                        |
-| Original Loan to Value Ratio (LTV): total of **41** nulls- 0.0% |
-| Number of Borrowers: total of **41** nulls- 0.0%             |
-| Debt-To-Income (DTI): total of **668** nulls- 0.01%          |
-| Borrower Credit Score at Origination: total of **6114** nulls- 0.07% |
-| Co-Borrower Credit Score at Origination: total of **4373161** nulls- 52.79% |
-| First Time Home Buyer Indicator: total of **41** nulls- 0.0% |
-| Amortization Type: total of 0 nulls- 0.0%                    |
-| Current Loan Delinquency Status: total of 0 nulls- 0.0%      |
-| Modification Flag: total of 0 nulls- 0.0%                    |
-| Foreclosure Date: total of **8279621** nulls- 99.95%         |
-| Home Ready Program Indicator: total of 0 nulls- 0.0%         |
-| High Balance Loan Indicator: total of 0 nulls- 0.0%          |
-| Borrower Assistance Plan: total of 0 nulls- 0.0%             |
-| Minimum Credit Score: total of **4185** nulls- 0.05%         |
-
 > You can see that **`Foreclosure`**  has **99.95%** missing data and **`Co-Borrower Credit Score at Origination`** has **52.79%** missing. 
-
-**Data Table**
-
-|  #   |                 Column                  |  Dtype  |
-| :--: | :-------------------------------------: | :-----: |
-|  0   |             Loan Identifier             |  int64  |
-|  1   |        Monthly Reporting Period         |  int64  |
-|  2   |         Original Interest Rate          | float64 |
-|  3   |          Current Interest Rate          | float64 |
-|  4   |              Original UPB               | float64 |
-|  5   |           Original Loan Term            | float64 |
-|  6   |            Origination Date             | float64 |
-|  7   |                Loan Age                 | float64 |
-|  8   |              Maturity Date              | float64 |
-|  9   |   Original Loan to Value Ratio (LTV)    | float64 |
-|  10  |           Number of Borrowers           | float64 |
-|  11  |          Debt-To-Income (DTI)           | float64 |
-|  12  |  Borrower Credit Score at Origination   | float64 |
-|  13  | Co-Borrower Credit Score at Origination | float64 |
-|  14  |     First Time Home Buyer Indicator     | object  |
-|  15  |            Amortization Type            | object  |
-|  16  |     Current Loan Delinquency Status     |  int64  |
-|  17  |            Modification Flag            | object  |
-|  18  |            Foreclosure Date             | float64 |
-|  19  |      Home Ready Program Indicator       | object  |
-|  20  |       High Balance Loan Indicator       | object  |
-|  21  |        Borrower Assistance Plan         | object  |
 
 ## Data Manipulation
 
@@ -197,33 +169,21 @@ The following was completed:
 
 # Exploratory Data Analysis
 
-------
-
-Here is a look at our final data information table:
-
-|  #   |               Column               |     Dtype      |
-| :--: | :--------------------------------: | :------------: |
-|  0   |          Loan Identifier           |     int64      |
-|  1   |      Monthly Reporting Period      | datetime64[ns] |
-|  2   |       Current Interest Rate        |    float64     |
-|  3   |            Original UPB            |     int64      |
-|  4   |         Original Loan Term         |     int64      |
-|  5   |          Origination Date          | datetime64[ns] |
-|  6   |              Loan Age              |     int64      |
-|  7   |           Maturity Date            | datetime64[ns] |
-|  8   | Original Loan to Value Ratio (LTV) |     int64      |
-|  9   |        Number of Borrowers         |     int64      |
-|  10  |        Debt-To-Income (DTI)        |     int64      |
-|  11  |  First Time Home Buyer Indicator   |     int64      |
-|  12  |         Modification Flag          |     int64      |
-|  13  |    Home Ready Program Indicator    |     int64      |
-|  14  |    High Balance Loan Indicator     |     int64      |
-|  15  |        Minimum Credit Score        |     int64      |
-|  16  |             Foreclosed             |     int64      |
-
-One major concern was the imbalance within our target feature **Foreclosed** 
+> **Reviewing the  heatmap we can see the relationship between all of the features and determine if there will be any collinearity, however since we are conducting a prediction classification multi-collinearity will not affect our outcome**
 
 
+
+![heatmap](./Notebook_images/heatmap.png)
+
+
+
+> **This image contains boxplots and distplots of a few features.** We can see that there are some features which contain outliers and  we have right and left skewed distribution.
+
+![](C:\Users\RaulPena\Documents\classification_analysis\Notebook_images\subplots_boxplot_and_displot.png)
+
+
+
+## Our target feature **Foreclosed** was heavily imbalanced:
 
 <div style="display: flex; justify-content: center">
    <img src="./Notebook_images/target_feature_distribution.png" style="height: 400px;  width: 50%">
@@ -232,49 +192,33 @@ One major concern was the imbalance within our target feature **Foreclosed**
 
 ## Imbalanced Data Modeling
 
-#### The problem with Imbalanced Classes:
+Machine learning algorithms work better when the number of samples in each class are about equal.  
 
-Machine learning algorithms work better when the number of samples in each class are about equal.  Most algorithms are designed to maximize accuracy and reduce error.
+- **Majority Class**: The target feature values are **[0]** not foreclosed.
+- **Minority Class**: The target features values are **[1]** foreclosed.
 
-The class or classes with abundant examples are called the major or majority classes, whereas the class with few examples (and there is typically just one) is called the minor or minority class.
-
-- **Majority Class**: The class (or classes) in an imbalanced classification predictive modeling problem that has many examples.
-- **Minority Class**: The class in an imbalanced classification predictive modeling problem that has few examples.
-
-The minority class is of most importance typically. This class is harder to predict because there are so few examples. 
-
-Here is a list of examples of imbalanced data:
-
-- Fraud Detection.
-- Claim Prediction
-- Default Prediction.
-- Churn Prediction.
-- Spam Detection.
-- Anomaly Detection.
-- Outlier Detection.
-- Intrusion Detection
-- Conversion Prediction.
-
-Ways to combat imbalanced training data are:
+Here are some ways to overcome the challenge of imbalanced:
 
 1. **Can we collect more data?**
 
-2. **Try changing your performance metric.**
+2. **Change the performance metric.**
 
-   - **Confusion Matrix**: A breakdown of predictions into a table showing correct predictions (the diagonal) and the types of incorrect predictions made (what classes incorrect predictions were assigned).
+   - **Confusion Matrix**: A breakdown of predictions into a table showing correct predictions and the types of incorrect predictions made.
    - **Precision**: A measure of a classifiers exactness.
    - **Recall**: A measure of a classifiers completeness
    - **F1 Score (or F-score)**: A weighted average of precision and recall.
 
 3. **We can try resampling the dataset**
 
-   1.  Add copies from the under-represented class call over-sampling, or
+   1.  Add copies from the under-represented class called over-sampling, or
    2. Delete instances from the over-represented class, called under-sampling
    3. Or we could do both
 
 4. **Generate Synthetic Samples**
 
-   Here is a link to the most popular algorithm called **[SMOTE](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)** or the Synthetic Minority Over-sampling Technique. SMOTE is an oversampling method, in which the algorithm selects two or more similar instances and using a distance measure and pertubing an instance one attribute at a time by a random amount within the difference to the neighboring instances.
+   Here is a link to the most popular algorithm called **[SMOTE](https://machinelearningmastery.com/smote-oversampling-for-imbalanced-classification/)** or the Synthetic Minority Over-sampling Technique. 
+   
+   The module works by generating new instances from existing minority cases that you supply as input. This implementation of SMOTE does **not** change the number of majority cases.
 
 ### Here is an example of what SMOTE is doing:
 
@@ -283,48 +227,76 @@ Ways to combat imbalanced training data are:
 </div>
 [source](https://oralytics.files.wordpress.com/2019/05/screenshot-2019-05-20-15.34.14.png?w=705)
 
-# Modeling
+> **Another example of how SMOTE works behind the scenes**
 
-Imports
+![](./Notebook_images/SMOTE_examples.jpg)
 
-```python
-import pandas as pd
-import numpy as np
-from numpy import where
-import scipy as sci
-import seaborn as sns
+## Logistic Regression
 
-from matplotlib import pyplot as plt
-%matplotlib inline
-import warnings
-warnings.filterwarnings('ignore')
+To create a baseline for all of our modeling I ran a logistic regression algorithm. It is the most simplest of all machine learning algorithms. 
 
-from collections import Counter
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/UndersamplingLogR.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/UnderSampling_Logistic_Regression.png" style="height: 400px; width: 70%">
+</div>
 
-# imblearn
-from imblearn.over_sampling import RandomOverSampler as ros
-from imblearn.under_sampling import RandomUnderSampler as rus
-from imblearn.over_sampling import SMOTE
-from imblearn import under_sampling, over_sampling, combine
 
-# sklearn
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import f1_score, roc_auc_score, roc_curve
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import precision_score, roc_auc_score, accuracy_score, confusion_matrix, recall_score, plot_confusion_matrix
-from sklearn.model_selection import train_test_split, GridSearchCV, cross_validate, cross_val_score, StratifiedKFold, RepeatedStratifiedKFold
+> Here are the results using Logistic Regression with the Oversampled data
 
-# XGBoost
-import xgboost as xgb
-from xgboost import XGBClassifier
-from catboost import CatBoostClassifier
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/SMOTE_Oversample_LogR.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/LogROversamplingConfusionmatrix.png" style="height: 400px; width: 70%">
+</div>
 
-# save model
-import pickle
-```
+
+## Decision Tree
+
+> Decision Tree using Under Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
+</div>
+
+> Decision Tree using Over Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/Dtree_Oversample.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Dtree_Oversample_Classification.png" style="height: 400px; width: 70%">
+</div>
+
+## Random Forest
+
+> Random Forest using Under Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/Dtree_Undersample.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/DTreeUndersampledClassifaction.png" style="height: 400px; width: 70%">
+</div>
+
+> Random Forest using Over Sampling Data
+
+<div style="display: flex; justify-content: center">
+   <img src="./Notebook_images/Dtree_Oversample.png" style="height: 400px;  width: 50%">
+   <img src="./Notebook_images/Dtree_Oversample_Classification.png" style="height: 400px; width: 70%">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 ------
 
-[Deployed App](https://capstone-classification-app.herokuapp.com/)
+[Heroku Deployed App Link](https://capstone-classification-app.herokuapp.com/)
 
 ## Overview:
 
@@ -352,3 +352,4 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 
 
 
+[Heroku Deployed App Link](https://capstone-classification-app.herokuapp.com/)

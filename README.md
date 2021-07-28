@@ -350,5 +350,5 @@ To create a baseline for all of our modeling I ran a logistic regression algorit
 
 <img src="./Notebook_images/roc_xgboost_oversampling.png" style="zoom: 100%;" />
 
-
+[Check out the deployed App](https://capstone-classification-app.herokuapp.com/)
 

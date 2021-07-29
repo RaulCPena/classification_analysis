@@ -293,3 +293,12 @@ To create a baseline for all of our modelings, I ran a logistic regression algor
 
 
 [Heroku Deployed Model](https://capstone-classification-app.herokuapp.com/)
+
+**Special Thanks To**
+
+------
+I would like to thank **Drew Jones** for providing support and being an excellent listener.
+
+**Oswald Vinueza** thank you for answering all my questions and providing direction when needed. 
+
+------

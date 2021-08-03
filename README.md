@@ -302,7 +302,7 @@ I would like to thank **Drew Jones** for providing support and being an excellen
 
 ------
 
-August 2nd app was uploaded to [docker](docker pull rcpena/classification-fnma)
+August 2nd app was uploaded to [docker](https://hub.docker.com/r/rcpena/classification-fnma)
 
-Agust 3rd app was deployed on [AWS](https://gallery.ecr.aws/b8c1q3u4/classification-capstone)
+August 3rd app was deployed on [AWS](https://gallery.ecr.aws/b8c1q3u4/classification-capstone)
 

@@ -301,3 +301,10 @@ I would like to thank **Drew Jones** for providing support and being an excellen
 **Oswald Vinueza** thank you for answering all my questions and providing direction when needed. 
 
 ------
+
+UPDATE
+------
+August 2nd, 2020 uploaded app to [Docker](docker pull rcpena/classification-fnma)
+
+August 3rd, 2020 deployed on [AWS](https://gallery.ecr.aws/b8c1q3u4/classification-capstone)
+

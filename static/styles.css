@@ -4,23 +4,16 @@ body{
 }
 body *{
     font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
-    /* border: 1px solid pink; */
+   
 
 }
 
-/* .background{
-    width:150%;
-    position:absolute;
-    z-index:-1;
-    opacity:.3;
-    background-repeat:repeat-y;
-} */
+
 
 
 
 .navbarTotal{
-    /* min-width:1250px; */
-    /* background-color: #343a40!important; */    
+
     
     background: linear-gradient( #191c1f, #3a3c3d);
     line-height:1.5;
@@ -145,13 +138,7 @@ a.nav-link{
       background-color: #17a2b8;
       border-color: #117a8b;
   }
-/* #scroller-right{
-    position: fixed;
-    right: 300px;
-    width: 375px;
-    bottom: 2rem;
-   
-} */
+
 .col-md-4 {
     bottom: 1rem;
     align-self: flex-end;
